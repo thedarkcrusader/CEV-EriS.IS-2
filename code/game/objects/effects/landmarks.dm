@@ -198,7 +198,7 @@ Template:
 
 /// LOOT SPAWNERS HERE
 /// BEGINNING OF LOOT SPAWNERS
-/// Be careful. Make sure to search up all items related to what you are spawning and make it possible for it's ammo to spawn as well. 
+/// Be careful. Make sure to search up all items related to what you are spawning and make it possible for it's ammo to spawn as well.
 
 /obj/random/loot/guardgear
 	name = "Guard Gear"
@@ -310,7 +310,7 @@ Template:
 				/obj/item/ammo_magazine/c45m/warfare = 3,
 				/obj/item/ammo_magazine/mc9mmt/machinepistol = 9,
 				/obj/item/ammo_magazine/mc9mmt/machinepistol = 8,
-				/obj/item/ammo_magazine/bolt_pistol_magazine = 1)
+				/obj/item/ammo_magazine = 1)
 
 /obj/random/loot/sidearmammo
 	name = "Sidearm Ammo"
@@ -326,7 +326,7 @@ Template:
 				/obj/item/cell/lasgun = 8,
 				/obj/item/ammo_magazine/c44 = 5,
 				/obj/item/ammo_box/shotgun = 3,
-				/obj/item/ammo_magazine/bolt_pistol_magazine = 1)
+				/obj/item/ammo_magazine = 1)
 
 /obj/random/loot/sidearms
 	name = "Sidearms"
@@ -380,7 +380,7 @@ Template:
 
 /obj/random/loot/heavystubberammo/spawn_choices()
 	return list(/obj/item/ammo_magazine/mc9mmt/machinepistol = 10,
-	            /obj/item/ammo_magazine/bolt_rifle_magazine = 1,
+	            /obj/item/ammo_magazine = 1,
 				/obj/item/ammo_box/rifle = 5,
 				/obj/item/ammo_magazine/autogrim = 5,
 				/obj/item/ammo_box/shotgun = 4,
@@ -395,14 +395,14 @@ Template:
 	icon_state = "revolver"
 
 /obj/random/loot/heavystubber/spawn_choices()
-	return list(/obj/item/gun/projectile/lockebolter = 1,
+	return list(/obj/item/gun/projectile = 1,
 				/obj/item/gun/projectile/automatic/autogrim = 5,
 				/obj/item/gun/projectile/shotgun/pump = 6,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/tinkered = 8,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester = 9,
 				/obj/item/gun/projectile/shotgun/pump/shitty/magrave = 8,
-				/obj/item/gun/projectile/automatic/stubber = 10,
-				/obj/item/gun/projectile/automatic/stubber/villiers = 5)
+				/obj/item/gun/projectile = 10,
+				/obj/item/gun/projectile= 5)
 
 // DUNGEON & PILGRIM LOOT. These spawners are generally low quality and have wide selection making them ideal as generic loot.
 
@@ -414,7 +414,7 @@ Template:
 
 /obj/random/loot/randomammo/spawn_choices()
 	return list(/obj/item/ammo_magazine/mc9mmt/machinepistol = 10,
-	            /obj/item/ammo_magazine/bolt_rifle_magazine = 1,
+	            /obj/item/ammo_magazine = 1,
 				/obj/item/ammo_box/rifle = 9,
 				/obj/item/ammo_magazine/box/a556/mg08 = 10,
 				/obj/item/ammo_box/shotgun = 13,
@@ -427,7 +427,7 @@ Template:
 				/obj/item/ammo_magazine/autogrim = 2,
 				/obj/item/ammo_magazine/mc9mmt/machinepistol = 8,
 				/obj/item/ammo_magazine/a357 = 2,
-				/obj/item/ammo_magazine/bolt_pistol_magazine = 2)
+				/obj/item/ammo_magazine= 2)
 
 
 /obj/random/loot/badweapon
@@ -449,7 +449,7 @@ Template:
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/tinkered = 4,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester = 4,
 				/obj/item/gun/projectile/shotgun/pump/shitty/magrave = 6,
-				/obj/item/gun/projectile/automatic/stubber/villiers = 3,
+				/obj/item/gun/projectile = 3,
 				/obj/item/gun/projectile/automatic/machinepistol = 5,
 				/obj/item/gun/projectile/automatic/machinepistol/a80 = 4,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty = 6,
@@ -470,13 +470,13 @@ Template:
 				/obj/item/gun/projectile/mervex = 1,
 				/obj/item/gun/projectile/necros = 1,
 				/obj/item/gun/projectile/slugrevolver = 1,
-				/obj/item/gun/projectile/lockebolter = 1,
+				/obj/item/gun/projectile= 1,
 				/obj/item/gun/projectile/talon/renegade = 1,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/tinkered = 8,
 				/obj/item/gun/projectile/shotgun/pump/boltaction/shitty/leverchester = 6,
 				/obj/item/gun/projectile/shotgun/pump/shitty/magrave = 6,
-				/obj/item/gun/projectile/automatic/stubber = 6,
-				/obj/item/gun/projectile/automatic/stubber/villiers = 6,
+				/obj/item/gun/projectile = 6,
+				/obj/item/gun/projectile = 6,
 				/obj/item/gun/projectile/automatic/machinepistol/a80 = 8,
 				/obj/item/gun/projectile/bolter_pistol = 2,
 				/obj/item/gun/energy/las/lasgun/rare = 4,
@@ -608,7 +608,7 @@ Template:
 // MOB AND ANIMAL SPAWNERS
 
 // CHAOS BEASTIES
-// Zygotes = Slow acid zombies. Only idiots get killed by these. 
+// Zygotes = Slow acid zombies. Only idiots get killed by these.
 // Bloodletter = Khorne Demon / Blood Legion Commander. Very high damage and decent HP. Friendly to cultists.
 // Bubbling Mass = Big fat daemon. High HP and damage. Slow.
 // Flesh Beast = Medium daemon. Average HP and damage.

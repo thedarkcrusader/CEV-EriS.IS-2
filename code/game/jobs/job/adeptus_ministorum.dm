@@ -253,11 +253,10 @@
 	shoes = /obj/item/clothing/shoes/sisterofbattle
 	id_type = /obj/item/card/id/dog_tag
 	l_pocket = /obj/item/storage/box/ifak
-	l_hand = /obj/item/gun/projectile/sisterbolter
+	l_hand = null
 	r_hand = /obj/item/gun/projectile/bolter_pistol/sisterofbattle
 	backpack_contents = list(
 	/obj/item/reagent_containers/food/snacks/warfare = 1,
-	/obj/item/ammo_magazine/bolt_rifle_magazine/sister = 4,
 	/obj/item/stack/thrones3/ten = 2,
 	)
 

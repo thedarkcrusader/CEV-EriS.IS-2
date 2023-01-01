@@ -328,12 +328,7 @@
 
 		switch(whatwemaking)
 
-			if(1)
-				playsound(src, 'sound/voice/blessing.ogg', 100, 0, 1)
-				visible_message("As the carvings are lathered with the holy oil they begin to take their intended shape!")
-				new /obj/item/ammo_magazine/bolt_rifle_magazine(user.loc)
-				qdel(src)
-				return
+
 			if(2)
 				playsound(src, 'sound/voice/blessing.ogg', 100, 0, 1)
 				visible_message("As the carvings are lathered with the holy oil they begin to take their intended shape!")
@@ -495,6 +490,6 @@
 			if(1)
 				playsound(src, 'sound/voice/blessing.ogg', 100, 0, 1)
 				visible_message("As the carvings are lathered with the holy oil they begin to take their intended shape!")
-				new /obj/item/gun/projectile/lockebolter(user.loc)
+				new /obj/item/stack/material/gold(user.loc)
 				qdel(src)
 				return

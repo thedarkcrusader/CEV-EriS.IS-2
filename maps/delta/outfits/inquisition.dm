@@ -17,7 +17,6 @@
 	suit_store = /obj/item/gun/projectile/bolter_pistol
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 2,
 	/obj/item/device/flashlight/lantern = 1,
 	/obj/item/reagent_containers/food/snacks/warfare/rat = 1,
 	/obj/item/stack/thrones/five = 1,
@@ -51,7 +50,6 @@
 	suit_store = /obj/item/gun/projectile/bolter_pistol
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/warfare/rat = 1,
 	/obj/item/device/flashlight/lantern = 1,
 	/obj/item/stack/thrones/five = 1,
@@ -67,9 +65,8 @@
 	suit = /obj/item/clothing/suit/storage/hooded/inquisitor
 	shoes = /obj/item/clothing/shoes/jackboots/cadian
 	head = null
-	suit_store = /obj/item/gun/projectile/lockebolter
+	suit_store = null
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/warfare/rat = 1,
 	/obj/item/device/flashlight/lantern = 1,
 	/obj/item/stack/thrones/five = 1,

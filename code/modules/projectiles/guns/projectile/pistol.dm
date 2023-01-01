@@ -309,17 +309,7 @@
 	else
 		..()
 
-/obj/item/gun/projectile/ork/slugga
-	name = "slugga"
-	desc = "A hard hitting ork pistol made from scrap and trash. It uses .75 scrap bullets."
-	magazine_type = /obj/item/ammo_magazine/ork/slugga
-	allowed_magazines = /obj/item/ammo_magazine/ork/slugga
-	icon_state = "slugga"
-	caliber = ".75"
-	can_jam = FALSE
-	accuracy = -0.2
-	force = 20
-	load_method = MAGAZINE
+
 
 
 // BOLT PISTOL
@@ -335,8 +325,8 @@
 	fire_delay = 4.1
 	move_delay = 2
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/bolt_pistol_magazine
-	allowed_magazines = /obj/item/ammo_magazine/bolt_pistol_magazine
+	magazine_type = /obj/item/ammo_magazine
+	allowed_magazines = /obj/item/ammo_magazine
 	slot_flags = SLOT_BELT|SLOT_S_STORE
 
 /obj/item/gun/projectile/bolter_pistol/update_icon()
@@ -358,8 +348,8 @@
 	fire_delay = 3.8
 	move_delay = 3
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/bolt_pistol_magazine
-	allowed_magazines = /obj/item/ammo_magazine/bolt_pistol_magazine
+	magazine_type = /obj/item/ammo_magazine
+	allowed_magazines = /obj/item/ammo_magazine
 	slot_flags = SLOT_BELT|SLOT_S_STORE
 
 /obj/item/gun/projectile/bolter_pistol/update_icon()

@@ -10,7 +10,6 @@
 	id = null
 	id_slot = null
 	pda_slot = null
-	backpack_contents = list(/obj/item/ammo_magazine/kroot = 2,)
 
 
 //Tau
@@ -49,7 +48,7 @@
 	id = null
 	id_slot = null
 	pda_slot = null
-	backpack_contents = list(/obj/item/ammo_magazine/ork/shoota = 2, /obj/item/melee/classic_baton/trench_club = 1,)
+	backpack_contents = list(/obj/item/melee/classic_baton/trench_club = 1,)
 
 /decl/hierarchy/outfit/job/ork/equip()
 	if(prob(50))

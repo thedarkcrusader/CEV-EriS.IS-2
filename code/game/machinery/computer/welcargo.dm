@@ -560,7 +560,7 @@
 			sleep(40)
 			var/obj/effect/landmark/cargospawn/T = locate() //where dey spawning
 			new /obj/item/gun/projectile/automatic/autogrim(T.loc) //what they spawning
-			src.buying = 0			
+			src.buying = 0
 	if (href_list["stubber"])
 		if(GLOB.thrones < 35) //do we got enough shekels?
 			visible_message("You cannot afford that!")
@@ -575,7 +575,7 @@
 			playsound(usr, 'sound/effects/beam.ogg', 50, 0, -1)
 			sleep(40)
 			var/obj/effect/landmark/cargospawn/T = locate() //where dey spawning
-			new /obj/item/gun/projectile/automatic/stubber(T.loc) //what they spawning
+			new /obj/item/gun/projectile/automatic(T.loc) //what they spawning
 			src.buying = 0
 	if (href_list["grimammo"])
 		if(GLOB.thrones < 4) //do we got enough shekels?
@@ -592,7 +592,7 @@
 			sleep(40)
 			var/obj/effect/landmark/cargospawn/T = locate() //where dey spawning
 			new /obj/item/ammo_magazine/autogrim(T.loc) //what they spawning
-			src.buying = 0		
+			src.buying = 0
 	if (href_list["stubberammo"])
 		if(GLOB.thrones < 7) //do we got enough shekels?
 			visible_message("You cannot afford that!")
@@ -656,7 +656,7 @@
 			playsound(usr, 'sound/effects/beam.ogg', 50, 0, -1)
 			sleep(40)
 			var/obj/effect/landmark/cargospawn/T = locate() //where dey spawning
-			new /obj/item/ammo_magazine/bolt_pistol_magazine(T.loc) //what they spawning
+			new /obj/item/ammo_magazine(T.loc) //what they spawning
 			src.buying = 0
 	if (href_list["rifleammo"])
 		if(GLOB.thrones < 5) //do we got enough shekels?

@@ -82,7 +82,6 @@
 	outfit.equip(src)
 
 	hand = 0//Make sure one of their hands is active.
-	put_in_hands(new /obj/item/gun/projectile/ork/automatic/shoota)//Give them a weapon.
 	src.isburied = 1
 
 /mob/living/carbon/human //the most cursed line in all of this code

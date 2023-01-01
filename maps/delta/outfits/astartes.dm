@@ -16,10 +16,9 @@ Begin Warhammer loadouts
 	l_ear = /obj/item/device/radio/headset/red_team
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = /obj/item/grenade/frag/shell
-	suit_store = /obj/item/gun/projectile/smurfbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -41,7 +40,7 @@ Begin Warhammer loadouts
 	head = /obj/item/clothing/head/helmet/astartes/ravenguard
 	mask = null
 	glasses = /obj/item/clothing/glasses/astarte/visor
-	suit_store = /obj/item/gun/projectile/ravenbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 
 /decl/hierarchy/outfit/job/astarte/salamander
@@ -53,7 +52,7 @@ Begin Warhammer loadouts
 	shoes = /obj/item/clothing/shoes/astarte/boots/sallys
 	head = /obj/item/clothing/head/helmet/astartes/salamander
 	glasses = /obj/item/clothing/glasses/astarte/visor
-	suit_store = /obj/item/gun/projectile/sallybolter
+	suit_store = null
 
 /decl/hierarchy/outfit/job/astarte/ultramarine/captain
 	name = OUTFIT_JOB_NAME("Ultramarine Company Captain")
@@ -68,10 +67,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = /obj/item/grenade/frag/shell
-	suit_store = /obj/item/gun/projectile/smurfbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -91,10 +89,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = /obj/item/grenade/frag/shell
-	suit_store = /obj/item/gun/projectile/ravenbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -114,10 +111,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = /obj/item/grenade/frag/shell
-	suit_store = /obj/item/gun/projectile/sallybolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -136,12 +132,12 @@ Begin Warhammer loadouts
 	mask = null
 	glasses = /obj/item/clothing/glasses/astarte/visor/apoc
 	l_pocket = /obj/item/storage/box/ifak
-	r_pocket = /obj/item/ammo_magazine/bolt_pistol_magazine
+	r_pocket = /obj/item/ammo_magazine
 	suit_store = /obj/item/gun/projectile/bolter_pistol/astarte
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
 	/obj/item/melee/pcsword = 1,
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 2,
+	/obj/item/ammo_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -161,12 +157,12 @@ Begin Warhammer loadouts
 	mask = null
 	glasses = /obj/item/clothing/glasses/astarte/visor/apoc
 	l_pocket = /obj/item/storage/box/ifak
-	r_pocket = /obj/item/ammo_magazine/bolt_pistol_magazine
+	r_pocket = /obj/item/ammo_magazine
 	suit_store = /obj/item/gun/projectile/bolter_pistol/astarte
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
 	/obj/item/melee/pcsword = 1,
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 2,
+	/obj/item/ammo_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -186,12 +182,12 @@ Begin Warhammer loadouts
 	mask = null
 	glasses = /obj/item/clothing/glasses/astarte/visor/apoc
 	l_pocket = /obj/item/storage/box/ifak
-	r_pocket = /obj/item/ammo_magazine/bolt_pistol_magazine
+	r_pocket = /obj/item/ammo_magazine
 	suit_store = /obj/item/gun/projectile/bolter_pistol/astarte
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
 	/obj/item/melee/pcsword = 1,
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 2,
+	/obj/item/ammo_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -212,10 +208,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = null
-	suit_store = /obj/item/gun/projectile/smurfbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -236,10 +231,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = null
-	suit_store = /obj/item/gun/projectile/ravenbolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
@@ -260,10 +254,9 @@ Begin Warhammer loadouts
 	glasses = /obj/item/clothing/glasses/astarte/visor
 	l_pocket = /obj/item/storage/box/ifak
 	r_pocket = null
-	suit_store = /obj/item/gun/projectile/sallybolter
+	suit_store = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	backpack_contents = list(
-	/obj/item/ammo_magazine/bolt_rifle_magazine = 2,
 	/obj/item/reagent_containers/food/snacks/sandwich = 1,
 	/obj/item/stack/thrones/five = 1,
 	/obj/item/stack/thrones2/five = 1,
