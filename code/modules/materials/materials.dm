@@ -366,8 +366,8 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/steel
 	integrity = 150
 	brute_armor = 5
-	icon_base = "solid"
-	icon_reinf = "reinf_over"
+	icon_base = "eris"
+	icon_reinf = "reinf_eris"
 	icon_colour = "#666666"
 	hitsound = 'sound/weapons/smash.ogg'
 	apply_icon_colour_to_walls = FALSE
@@ -398,9 +398,9 @@ var/list/name_to_material
 	stack_type = /obj/item/stack/material/plasteel
 	integrity = 400
 	melting_point = 6000
-	icon_base = "solid"
-	icon_reinf = "reinf_over"
-	icon_colour = "#777777"
+	icon_base = "eris"
+	icon_reinf = "reinf_eris"
+	icon_colour = PLASTEEL_COLOUR//#777777"
 	explosion_resistance = 25
 	brute_armor = 6
 	burn_armor = 10
