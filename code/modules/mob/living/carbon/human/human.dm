@@ -1789,6 +1789,12 @@
 				client.pixel_y = world.icon_size*_y
 
 			set_face_dir(dir)//Face what we're zoomed in on.
+			for(var/mob/living/M in oviewers(7, locate(loc.x + _x, loc.y + _y, loc.z)))
+				to_chat(M, SPAN_DANGER("You see a glint in the distance."))
+			for(var/mob/living/M in oviewers(7, locate(loc.x + _x, loc.y + _y, loc.z + 1)))
+				to_chat(M, SPAN_DANGER("You see a glint in the distance."))
+			for(var/mob/living/M in oviewers(7, locate(loc.x + _x, loc.y + _y, loc.z - 1)))
+				to_chat(M, SPAN_DANGER("You see a glint in the distance."))
 
 		zoomed = TRUE
 
