@@ -17,19 +17,51 @@
 	var/global/damage_overlays[16]
 	var/active
 	var/can_open = 0
-	var/last_state
 	var/integrity = 650
+	var/material/material
+	var/material/reinf_material
+	var/last_state
 	var/construction_stage
 	var/hitsound = 'sound/weapons/Genhit.ogg'
 	var/floor_type = /turf/simulated/floor/plating //turf it leaves after destruction
+	var/list/wall_connections = list("0", "0", "0", "0")
 
 
-/turf/simulated/wall/New(var/newloc)
+	/*
+		If set, these vars will be used instead of the icon base taken from the material.
+		These should be set at authortime
+		Currently, they can only be set at authortime, on specially coded wall variants
+
+		In future we should add some way to create walls of specific styles. Possibly during the construction process
+	*/
+	var/icon_base_override = ""
+	var/icon_base_reinf_override = ""
+	var/base_color_override = ""
+	var/reinf_color_override = ""
+
+	//These will be set from the set_material function. It just caches which base we're going to use, to simplify icon updating logic.
+	//These should not be set at compiletime, they will be overwritten
+	var/icon_base = ""
+	var/icon_base_reinf = ""
+	var/base_color = ""
+	var/reinf_color = ""
+
+
+/turf/simulated/wall/New(var/newloc, materialtype, rmaterialtype)
 	..(newloc)
 	icon_state = "blank"
 	relativewall_neighbours()
 	START_PROCESSING(SSslowprocess, src)
 	generate_splines()
+
+	icon_state = "blank"
+	if(!materialtype)
+		materialtype = MATERIAL_STEEL
+	material = get_material_by_name(materialtype)
+	if(!isnull(rmaterialtype))
+		reinf_material = get_material_by_name(rmaterialtype)
+	update_material(FALSE) //We call update material with update set to false, so it won't update connections or icon yet
+	..(newloc)
 
 /turf/simulated/wall/Destroy()
 	STOP_PROCESSING(SSslowprocess, src)
