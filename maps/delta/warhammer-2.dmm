@@ -1088,7 +1088,7 @@
 "MR" = (/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/security)
 "MY" = (/obj/effect/decal/cleanable/blood/gibs/xeno/up,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "Nb" = (/obj/effect/floor_decal/turf/splate,/obj/machinery/door/airlock/engineering{color = null; name = "Substation"},/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/hallway/western)
-"Nc" = (/obj/structure/closet/cabinet{color = "grey"},/obj/item/ammo_magazine/bolt_pistol_magazine,/obj/effect/floor_decal/newcorner/red/solid,/obj/item/ammo_magazine/bolt_pistol_magazine,/obj/item/ammo_magazine/bolt_pistol_magazine,/obj/item/ammo_magazine/bolt_pistol_magazine,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/service/bar)
+"Nc" = (/obj/structure/closet/cabinet{color = "grey"},/obj/effect/floor_decal/newcorner/red/solid,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/service/bar)
 "Nh" = (/obj/effect/decal/cleanable/blood/splatter,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "Nk" = (/obj/effect/floor_decal/turf/barnew,/obj/machinery/vending/boozeomat,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/service/inn)
 "Nm" = (/obj/effect/floor_decal/newcorner/shaft/diagonal,/obj/structure/cable{icon_state = "4-8"},/obj/effect/floor_decal/turf/metal/two,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/tradefloor)
