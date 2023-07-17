@@ -471,3 +471,27 @@ proc/TextPreview(var/string,var/len=40)
 		if (text2ascii(A, i) != text2ascii(B, i))
 			return FALSE
 	return TRUE
+
+
+
+//Takes a direction define and returns the name of it
+/proc/direction_to_text(var/D)
+	switch (D)
+		if (NORTH)
+			return "North"
+		if (SOUTH)
+			return "South"
+		if (EAST)
+			return "East"
+		if (WEST)
+			return "West"
+		if (NORTHWEST)
+			return "Northwest"
+		if (NORTHEAST)
+			return "Northeast"
+		if (SOUTHWEST)
+			return "Southwest"
+		if (SOUTHEAST)
+			return "Southeast"
+		else
+			return "Unknown direction [D]"

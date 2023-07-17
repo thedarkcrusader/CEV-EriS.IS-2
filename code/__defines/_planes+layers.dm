@@ -364,3 +364,12 @@ GLOBAL_LIST_INIT(ghost_master, list(
 /obj/screen/plane_master/vision_cone/inverted/Initialize()
 	. = ..()
 	filters += filter(type="alpha", render_source="vision_cone_target")
+
+//eris shit here//
+
+#define HIDE_LAYER 2.54
+
+#define LOW_OBJ_LAYER 2.55
+
+#define LOW_WALL_LAYER 2.71 //Low walls have to be above fire shutters or they look awful
+

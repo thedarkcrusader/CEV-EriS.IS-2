@@ -20,6 +20,7 @@
 	var/shardtype = /obj/item/material/shard
 	var/glasstype = null // Set this in subtypes. Null is assumed strange or otherwise impossible to dismantle, such as for shuttle glass.
 	var/silicate = 0 // number of units of silicate
+	var/no_color = FALSE //If true, don't apply a color to the base
 
 	atmos_canpass = CANPASS_PROC
 
@@ -597,3 +598,168 @@
 
 /obj/machinery/button/windowtint/update_icon()
 	icon_state = "light[active]"
+
+
+//merges adjacent full-tile windows into one (blatant ripoff from game/smoothwall.dm)
+/obj/structure/window/update_icon()
+	//A little cludge here, since I don't know how it will work with slim windows. Most likely VERY wrong.
+	//this way it will only update full-tile ones
+	overlays.Cut()
+	if(!is_fulltile())
+		icon_state = "[basestate]"
+		return
+	/*
+	var/list/dirs = list()
+	if(anchored)
+		for(var/obj/structure/window/W in orange(src,1))
+			if(W.anchored && W.density && W.type == src.type && W.is_fulltile()) //Only counts anchored, not-destroyed fill-tile windows.
+				dirs += get_dir(src, W)
+
+	for(var/turf/simulated/wall/T in trange(1, src) - src)
+		var/T_dir = get_dir(src, T)
+		dirs |= T_dir
+		if(propagate)
+			spawn(0)
+				T.update_connections()
+				T.update_icon()
+	*/
+	//Since fulltile windows can't exist without an underlying wall, we will just copy connections from our wall
+	var/list/connections = list("0", "0", "0", "0")
+	var/obj/structure/low_wall/LW = (locate(/obj/structure/low_wall) in loc)
+	if (istype(LW))
+		connections = LW.connections
+
+	icon_state = ""
+	for(var/i = 1 to 4)
+		var/image/I = image(icon, "[basestate][connections[i]]", dir = 1<<(i-1))
+		overlays += I
+
+	return
+
+/obj/structure/window/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	if(exposed_temperature > maximal_heat)
+		hit(damage_per_fire_tick, 0)
+	..()
+
+
+
+/obj/structure/window/basic
+	desc = "It looks thin and flimsy. A few knocks with... anything, really should shatter it."
+	icon_state = "window"
+	basestate = "window"
+	glasstype = /obj/item/stack/material/glass
+	maximal_heat = T0C + 100
+	damage_per_fire_tick = 2.0
+	maxhealth = 15
+
+
+/obj/structure/window/basic/full
+	dir = SOUTH|EAST
+	icon = 'icons/obj/structures/windows.dmi'
+	icon_state = "fwindow"
+	alpha = 120
+	maxhealth = 40
+
+
+/obj/structure/window/plasmabasic
+	name = "plasma window"
+	desc = "A borosilicate alloy window. It seems to be quite strong."
+	basestate = "pwindow"
+	icon_state = "plasmawindow"
+	shardtype = /obj/item/stack/material/glass/reinforced
+	glasstype = /obj/item/stack/material/glass/reinforced
+	maximal_heat = T0C + 2000
+	damage_per_fire_tick = 1.0
+	maxhealth = 150
+
+
+/obj/structure/window/plasmabasic/full
+	dir = SOUTH|EAST
+	icon = 'icons/obj/structures/windows.dmi'
+	icon_state = "plasmawindow_mask"
+	alpha = 150
+	maxhealth = 200
+
+
+/obj/structure/window/reinforced
+	name = "reinforced window"
+	desc = "It looks rather strong. Might take a few good hits to shatter it."
+	icon_state = "rwindow"
+	basestate = "rwindow"
+	maxhealth = 600
+	reinf = 1
+	maximal_heat = T0C + 750
+	damage_per_fire_tick = 2.0
+	glasstype = /obj/item/stack/material/glass/reinforced
+
+	maxhealth = 50
+
+
+/obj/structure/window/New(Loc, constructed=0)
+	..()
+
+	//player-constructed windows
+	if (constructed)
+		state = 0
+
+/obj/structure/window/reinforced/full
+	dir = SOUTH|EAST
+	icon = 'icons/obj/structures/windows.dmi'
+	icon_state = "fwindow"
+	alpha = 150
+	maxhealth = 80
+
+
+/obj/structure/window/reinforced/plasma
+	name = "reinforced borosilicate window"
+	desc = "A borosilicate alloy window, with rods supporting it. It seems to be very strong."
+	basestate = "plasmarwindow"
+	icon_state = "plasmarwindow"
+	shardtype = /obj/item/stack/material/glass/reinforced
+	glasstype = /obj/item/stack/material/glass/reinforced
+	maximal_heat = T0C + 9000
+	damage_per_fire_tick = 1.0 // This should last for 80 fire ticks if the window is not damaged at all. The idea is that borosilicate windows have something like ablative layer that protects them for a while.
+	maxhealth = 150
+
+
+/obj/structure/window/reinforced/plasma/full
+	dir = SOUTH|EAST
+	icon_state = "plasmarwindow_mask"
+	alpha = 150
+	maxhealth = 200
+
+
+/obj/structure/window/reinforced/tinted
+	name = "tinted window"
+	desc = "It looks rather strong and opaque. Might take a few good hits to shatter it."
+	icon_state = "twindow"
+	basestate = "twindow"
+	opacity = 1
+
+/obj/structure/window/reinforced/tinted/frosted
+	name = "frosted window"
+	desc = "It looks rather strong and frosted over. Looks like it might take a few less hits then a normal reinforced window."
+	icon_state = "fwindow"
+	basestate = "fwindow"
+
+/obj/structure/window/shuttle
+	name = "shuttle window"
+	desc = "It looks rather strong. Might take a few good hits to shatter it."
+	icon = 'icons/obj/podwindows.dmi'
+	icon_state = "window"
+	basestate = "window"
+	maxhealth = 300
+	reinf = 1
+	basestate = "w"
+	dir = 5
+
+
+//Fulltile windows can only exist ontop of a low wall
+//If they're ever not on a wall, they will drop to the floor and smash.
+/obj/structure/window/proc/mount_check()
+	if (!is_full_window())
+		return
+
+	//If there's a wall under us, we're safe, stop here.
+	if (locate(/obj/structure/low_wall) in loc)
+		return
