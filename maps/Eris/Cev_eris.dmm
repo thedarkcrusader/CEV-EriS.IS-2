@@ -23117,14 +23117,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aRF" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/syndie_kit/imp_explosive,
-/obj/item/storage/box/syndie_kit/imp_explosive,
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/suit_cycler/syndicate,
+/turf/simulated/floor/wood,
 /area/space)
 "aRG" = (
-/obj/structure/table/steel,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/sign/commissar,
+/turf/simulated/wall/r_wall,
 /area/space)
 "aRH" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -23219,12 +23217,25 @@
 	},
 /area/space)
 "aRP" = (
-/obj/item/storage/box/syndie_kit/cigarette,
-/obj/item/storage/box/syndie_kit/imp_freedom,
-/obj/item/storage/box/syndie_kit/spy,
-/obj/item/storage/box/syndie_kit/g9mm,
 /obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/clothing/head/warfare_officer/redofficer,
+/obj/item/grenade/frag/warfare,
+/obj/item/storage/backpack/satchel/warfare/chestrig,
+/obj/item/storage/backpack/warfare,
+/obj/item/storage/backpack/warfare,
+/obj/item/storage/backpack/warfare,
+/obj/item/trash/warfare_can/sardine,
+/obj/item/trash/warfare_can/sardine,
+/obj/item/trash/warfare_can/sardine,
+/turf/simulated/floor/tiled,
 /area/space)
 "aRQ" = (
 /obj/machinery/atmospherics/omni/filter{
@@ -24286,11 +24297,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aTS" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/closet/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/card/id/syndicate,
-/turf/simulated/floor/wood,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/syndie_kit/imp_explosive,
+/obj/item/storage/box/syndie_kit/imp_explosive,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "aTT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -25059,8 +25069,8 @@
 /turf/simulated/floor/wood,
 /area/space)
 "aVu" = (
-/obj/structure/sign/commissar,
-/turf/simulated/wall/r_wall,
+/obj/structure/table/steel,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "aVv" = (
 /obj/structure/flora/pottedplant{
@@ -32631,6 +32641,10 @@
 /turf/simulated/floor/reinforced{
 	name = "engine floor"
 	},
+/area/space)
+"bii" = (
+/obj/machinery/suit_cycler/syndicate,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "bij" = (
 /obj/machinery/atmospherics/unary/vent_pump/engine{
@@ -65121,8 +65135,12 @@
 	},
 /area/space)
 "fDj" = (
-/obj/machinery/suit_cycler/syndicate,
-/turf/simulated/floor/wood,
+/obj/item/storage/box/syndie_kit/cigarette,
+/obj/item/storage/box/syndie_kit/imp_freedom,
+/obj/item/storage/box/syndie_kit/spy,
+/obj/item/storage/box/syndie_kit/g9mm,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark,
 /area/space)
 "fDJ" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -66524,8 +66542,11 @@
 /turf/simulated/floor/carpet,
 /area/space)
 "iIs" = (
-/obj/machinery/suit_cycler/syndicate,
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/structure/closet/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/card/id/syndicate,
+/turf/simulated/floor/wood,
 /area/space)
 "iKg" = (
 /obj/machinery/computer/robotics,
@@ -97879,7 +97900,7 @@ aaa
 aaa
 aaa
 aae
-aTS
+iIs
 afI
 abL
 agB
@@ -97889,7 +97910,7 @@ ahp
 aft
 aft
 aiy
-fDj
+aRF
 dPL
 aaa
 aaa
@@ -134835,10 +134856,10 @@ aaa
 aae
 tGU
 aae
-aRP
+fDj
 bMs
 bMs
-aRF
+aTS
 bMs
 hIJ
 sYO
@@ -135037,7 +135058,7 @@ aaa
 aae
 aae
 aae
-iIs
+bii
 bMs
 bMs
 jPy
@@ -135239,7 +135260,7 @@ aaa
 aaa
 aaa
 aae
-iIs
+bii
 bMs
 bMs
 aTV
@@ -135644,8 +135665,8 @@ aQP
 aQP
 aae
 aSV
-iIs
-iIs
+bii
+bii
 aae
 tGU
 tGU
@@ -137464,11 +137485,11 @@ aaa
 aaa
 aae
 gkD
-aRG
-aae
 aVu
 aae
 aRG
+aae
+aVu
 aaG
 aae
 aBl
@@ -259959,7 +259980,7 @@ udk
 brN
 aru
 udk
-aru
+aRP
 bsi
 gPJ
 jsC
