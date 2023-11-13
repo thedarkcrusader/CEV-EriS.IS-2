@@ -9073,7 +9073,7 @@
 	input_tag = "tox_in";
 	name = "Plasma Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensors = list("tox_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -10152,7 +10152,7 @@
 	input_tag = "waste_in";
 	name = "Gas Mix Tank Control";
 	output_tag = "waste_out";
-	sensors = list("waste_sensor" = "Tank")
+	sensors = list("waste_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -10191,7 +10191,7 @@
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out";
-	sensors = list("n2o_sensor" = "Tank")
+	sensors = list("n2o_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -10966,7 +10966,7 @@
 	name = "Mixed Air Supply Control";
 	output_tag = "air_out";
 	pressure_setting = 2000;
-	sensors = list("air_sensor" = "Tank")
+	sensors = list("air_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -11120,7 +11120,7 @@
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out";
-	sensors = list("co2_sensor" = "Tank")
+	sensors = list("co2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -11631,7 +11631,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensors = list("o2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -11672,7 +11672,7 @@
 	input_tag = "n2_in";
 	name = "Nitrogen Supply Control";
 	output_tag = "n2_out";
-	sensors = list("n2_sensor" = "Tank")
+	sensors = list("n2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -11797,7 +11797,7 @@
 	input_tag = "incernator_in";
 	name = "Incernator Control";
 	output_tag = "incernator_out";
-	sensors = list("incernator_sensor" = "Tank")
+	sensors = list("incernator_sensor"="Tank")
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -16807,7 +16807,7 @@
 	frequency = 1443;
 	level = 3;
 	name = "Distribution and Waste Monitor";
-	sensors = list("mair_in_meter" = "Mixed Air In", "air_sensor" = "Mixed Air Supply Tank", "mair_out_meter" = "Mixed Air Out", "dloop_atm_meter" = "Distribution Loop", "wloop_atm_meter" = "Waste Loop")
+	sensors = list("mair_in_meter"="Mixed Air In","air_sensor"="Mixed Air Supply Tank","mair_out_meter"="Mixed Air Out","dloop_atm_meter"="Distribution Loop","wloop_atm_meter"="Waste Loop")
 	},
 /obj/machinery/camera/network/engineering{
 	dir = 1
@@ -16852,7 +16852,7 @@
 	dir = 8;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous Oxide","waste_sensor"="Gas Mix Tank")
 	},
 /obj/machinery/power/apc{
 	name = "South APC";
@@ -23117,19 +23117,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aRF" = (
-/obj/machinery/alarm{
-	pixel_y = 26
-	},
-/obj/structure/bed/padded,
-/obj/item/bedsheet/blue,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/syndie_kit/imp_explosive,
+/obj/item/storage/box/syndie_kit/imp_explosive,
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aRG" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/blue,
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aRH" = (
@@ -23225,8 +23219,11 @@
 	},
 /area/space)
 "aRP" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/blue,
+/obj/item/storage/box/syndie_kit/cigarette,
+/obj/item/storage/box/syndie_kit/imp_freedom,
+/obj/item/storage/box/syndie_kit/spy,
+/obj/item/storage/box/syndie_kit/g9mm,
+/obj/structure/closet/crate,
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aRQ" = (
@@ -23519,9 +23516,9 @@
 	},
 /area/space)
 "aSr" = (
-/obj/machinery/vending/security,
 /obj/machinery/light{
-	dir = 4
+	dir = 1;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/space)
@@ -24289,11 +24286,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "aTS" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/obj/item/stool,
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/structure/closet/syndicate,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/card/id/syndicate,
+/turf/simulated/floor/wood,
 /area/space)
 "aTT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -25062,12 +25059,8 @@
 /turf/simulated/floor/wood,
 /area/space)
 "aVu" = (
-/obj/structure/table/standard,
-/obj/item/device/radio/off,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/sign/commissar,
+/turf/simulated/wall/r_wall,
 /area/space)
 "aVv" = (
 /obj/structure/flora/pottedplant{
@@ -26170,12 +26163,10 @@
 /turf/space,
 /area/space)
 "aXn" = (
-/obj/structure/table/standard,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/machinery/light{
@@ -32641,12 +32632,6 @@
 	name = "engine floor"
 	},
 /area/space)
-"bii" = (
-/obj/structure/table/standard,
-/obj/item/pen,
-/obj/item/storage/box/holobadge,
-/turf/simulated/floor/tiled/dark,
-/area/space)
 "bij" = (
 /obj/machinery/atmospherics/unary/vent_pump/engine{
 	dir = 4;
@@ -33256,7 +33241,7 @@
 	input_tag = "cooling_in";
 	name = "Engine Cooling Control";
 	output_tag = "cooling_out";
-	sensors = list("engine_sensor" = "Engine Core")
+	sensors = list("engine_sensor"="Engine Core")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -40818,7 +40803,7 @@
 	frequency = 1443;
 	level = 3;
 	name = "Distribution and Waste Monitor";
-	sensors = list("mair_in_meter" = "Mixed Air In", "air_sensor" = "Mixed Air Supply Tank", "mair_out_meter" = "Mixed Air Out", "dloop_atm_meter" = "Distribution Loop", "wloop_atm_meter" = "Engine Waste")
+	sensors = list("mair_in_meter"="Mixed Air In","air_sensor"="Mixed Air Supply Tank","mair_out_meter"="Mixed Air Out","dloop_atm_meter"="Distribution Loop","wloop_atm_meter"="Engine Waste")
 	},
 /obj/machinery/light{
 	dir = 8
@@ -40832,7 +40817,7 @@
 	dir = 1;
 	frequency = 1441;
 	name = "Tank Monitor";
-	sensors = list("n2_sensor" = "Nitrogen", "o2_sensor" = "Oxygen", "co2_sensor" = "Carbon Dioxide", "tox_sensor" = "Toxins", "n2o_sensor" = "Nitrous Oxide", "waste_sensor" = "Gas Mix Tank")
+	sensors = list("n2_sensor"="Nitrogen","o2_sensor"="Oxygen","co2_sensor"="Carbon Dioxide","tox_sensor"="Toxins","n2o_sensor"="Nitrous Oxide","waste_sensor"="Gas Mix Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -42302,7 +42287,7 @@
 	input_tag = "left_propulsion_in";
 	name = "Left Propulsion Control";
 	output_tag = "left_propulsion_out";
-	sensors = list("left_propulsion_sensor" = "Tank")
+	sensors = list("left_propulsion_sensor"="Tank")
 	},
 /obj/machinery/button/ignition{
 	id = "left_prop_chamber";
@@ -42393,7 +42378,7 @@
 	input_tag = "tox_in";
 	name = "Toxin Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensors = list("tox_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -42453,7 +42438,7 @@
 	input_tag = "tox_in";
 	name = "Toxin Supply Control";
 	output_tag = "tox_out";
-	sensors = list("tox_sensor" = "Tank")
+	sensors = list("tox_sensor"="Tank")
 	},
 /turf/space,
 /area/space)
@@ -42551,7 +42536,7 @@
 	input_tag = "right_propulsion_in";
 	name = "Right Propulsion Control";
 	output_tag = "right_propulsion_out";
-	sensors = list("right_propulsion_sensor" = "Tank")
+	sensors = list("right_propulsion_sensor"="Tank")
 	},
 /obj/machinery/button/ignition{
 	id = "right_prop_chamber";
@@ -42640,7 +42625,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensors = list("o2_sensor"="Tank")
 	},
 /turf/simulated/floor/tiled/dark{
 	icon_state = "steel_dirty"
@@ -42652,7 +42637,7 @@
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
 	output_tag = "o2_out";
-	sensors = list("o2_sensor" = "Tank")
+	sensors = list("o2_sensor"="Tank")
 	},
 /turf/space,
 /area/space)
@@ -48444,7 +48429,7 @@
 	input_tag = "toxins1_in";
 	name = "Mixing Chamber 1 Monitor";
 	output_tag = "toxins1_out";
-	sensors = list("toxins_mixing_1" = "Mixing Chamber - 1")
+	sensors = list("toxins_mixing_1"="Mixing Chamber - 1")
 	},
 /turf/simulated/floor/tiled/white{
 	icon_state = "white1"
@@ -48504,7 +48489,7 @@
 	dir = 8;
 	frequency = 1430;
 	name = "Mixing Chamber Monitor";
-	sensors = list("toxins_mixing_1" = "Mixing Chamber - 1", "toxins_mixing_2" = "Mixing Chamber - 2")
+	sensors = list("toxins_mixing_1"="Mixing Chamber - 1","toxins_mixing_2"="Mixing Chamber - 2")
 	},
 /turf/simulated/floor/tiled/white{
 	icon_state = "white1"
@@ -48654,7 +48639,7 @@
 	input_tag = "toxins2_in";
 	name = "Mixing Chamber 2 Monitor";
 	output_tag = "toxins2_out";
-	sensors = list("toxins_mixing_2" = "Mixing Chamber - 2")
+	sensors = list("toxins_mixing_2"="Mixing Chamber - 2")
 	},
 /turf/simulated/floor/tiled/white{
 	icon_state = "white1"
@@ -65136,9 +65121,8 @@
 	},
 /area/space)
 "fDj" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/suit_cycler/syndicate,
+/turf/simulated/floor/wood,
 /area/space)
 "fDJ" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -66540,7 +66524,7 @@
 /turf/simulated/floor/carpet,
 /area/space)
 "iIs" = (
-/obj/item/stool,
+/obj/machinery/suit_cycler/syndicate,
 /turf/simulated/floor/tiled/dark,
 /area/space)
 "iKg" = (
@@ -97895,7 +97879,7 @@ aaa
 aaa
 aaa
 aae
-kAg
+aTS
 afI
 abL
 agB
@@ -97905,7 +97889,7 @@ ahp
 aft
 aft
 aiy
-spL
+fDj
 dPL
 aaa
 aaa
@@ -134851,10 +134835,10 @@ aaa
 aae
 tGU
 aae
-aSV
+aRP
 bMs
 bMs
-dyk
+aRF
 bMs
 hIJ
 sYO
@@ -135053,7 +135037,7 @@ aaa
 aae
 aae
 aae
-aSV
+iIs
 bMs
 bMs
 jPy
@@ -135255,7 +135239,7 @@ aaa
 aaa
 aaa
 aae
-aSV
+iIs
 bMs
 bMs
 aTV
@@ -135660,8 +135644,8 @@ aQP
 aQP
 aae
 aSV
-aSV
-aSV
+iIs
+iIs
 aae
 tGU
 tGU
@@ -135865,10 +135849,10 @@ aae
 aae
 aae
 aae
-dPL
-dPL
-dPL
-dPL
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -136070,7 +136054,7 @@ bMs
 bMs
 bMs
 bMs
-vrD
+bMs
 aXn
 oqA
 aTN
@@ -136471,8 +136455,8 @@ ayH
 mgc
 aSD
 vjd
-iIs
-aTS
+bMs
+umg
 sYO
 bMs
 nWF
@@ -136670,14 +136654,14 @@ vjd
 dPL
 dPL
 aae
-aRF
+faR
 bMs
-iIs
-bii
-ahN
-iIs
 bMs
-aRP
+bMs
+bMs
+bMs
+bMs
+bMs
 aae
 aae
 aae
@@ -136872,14 +136856,14 @@ dPL
 aae
 aaa
 aae
-aRG
+aae
+aae
+aae
+aae
 bMs
-iIs
-fDj
-ahN
-iIs
-bMs
-aRP
+aae
+aae
+aae
 aae
 aBl
 aBl
@@ -137074,14 +137058,14 @@ aad
 aaa
 aaa
 aae
-aRP
+aae
+adE
+adE
+aae
 bMs
-iIs
-oKn
-vrD
-iIs
-bMs
-aRP
+aae
+adE
+adE
 aae
 aBl
 aBl
@@ -137279,11 +137263,11 @@ aae
 aae
 aSr
 bMs
-iIs
-iIs
 bMs
-aVu
-aae
+bMs
+bMs
+bMs
+acD
 aae
 aBl
 aBl
@@ -137479,14 +137463,14 @@ aaa
 aaa
 aaa
 aae
+gkD
+aRG
 aae
-dPL
-dPL
-dPL
-dPL
+aVu
 aae
+aRG
+aaG
 aae
-aaa
 aBl
 aBl
 aae
@@ -137680,14 +137664,14 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aad
-aaa
-aaa
-aaa
-aaa
-aad
-aaa
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 aBl
 aBl
