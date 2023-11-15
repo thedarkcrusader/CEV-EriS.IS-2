@@ -52,54 +52,39 @@
 
 /datum/grab/special/strangle/proc/do_strangle(var/obj/item/grab/G)
 	activate_effect = !activate_effect
-	G.assailant.visible_message("<span class='warning'>[G.assailant] [activate_effect ? "starts" : "stops"] strangling [G.affecting]</span>")
+	var/mob/living/carbon/human/assailant = G.assailant
+	var/mob/living/carbon/human/affecting = G.affecting
+	if (assailant.has_trait("military_training")) // Check if the assailant has military training
+		assailant.visible_message("<span class='warning'>[assailant] expertly maneuvers into a chokehold on [affecting]!</span>")
+	else
+		assailant.visible_message("<span class='warning'>[assailant] [activate_effect ? "starts" : "stops"] strangling [affecting]</span>")
 
 
-/obj/item/grab/special/wrench
-	type_name = GRAB_WRENCH
-	start_grab_name = GRAB_WRENCH
-
-
-/datum/grab/special/wrench
-	type_name = GRAB_WRENCH
-	icon_state = "wrench"
-	state_name = GRAB_WRENCH
 
 /datum/grab/special/wrench/attack_self_act(var/obj/item/grab/G)
-	do_wrench(G)
-	G.assailant.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
+	if (G.assailant.has_trait("military_training")) // Check if the assailant has military training
+		do_wrench(G)
+	else
+		G.assailant.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
 
 /datum/grab/special/wrench/proc/do_wrench(var/obj/item/grab/G)
 	var/obj/item/organ/external/O = G.get_targeted_organ()
 	var/mob/living/carbon/human/assailant = G.assailant
 	var/mob/living/carbon/human/affecting = G.affecting
-
-	if(assailant.doing_something)
+	if (assailant.doing_something)
 		return
-
-	if(!O)
+	if (!O)
 		to_chat(assailant, "<span class='warning'>[affecting] is missing that body part!</span>")
 		return
-	if(!G.wielded)
-		to_chat(assailant, "<span class='warning'>We must wield them in both hands to break their limb.</span>")
-		return
-
 	assailant.doing_something = TRUE
-
-	if(!do_after(assailant, 30, affecting))
+	if (!do_after(assailant, 30, affecting))
 		assailant.doing_something = FALSE
 		return
-
-
-	if(!O.is_broken()) // The limb is broken and we're grabbing it in both hands.
-		assailant.visible_message("<span class='danger'>[assailant] tries to break [affecting]'s [O.name]!</span>")
-		var/break_chance = (assailant.STAT_LEVEL(str)*10) - 105 // We have to have a strength over 12 to really have a chance of breaking a limb.
-		if(break_chance <= 0)
-			break_chance = 10
-		if(prob(break_chance))
-			O.fracture()
-
-	assailant.doing_something = FALSE
+	if (!O.is_broken()) // The limb is not already broken.
+		assailant.visible_message("<span class='danger'>[assailant] ruthlessly shatters [affecting]'s [O.name]!</span>")
+		O.fracture()
+	else
+		to_chat(assailant, "<span class='warning'>The limb is already broken.</span>")
 
 
 /obj/item/grab/special/takedown
