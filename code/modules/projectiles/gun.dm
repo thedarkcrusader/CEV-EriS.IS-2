@@ -213,6 +213,9 @@
             target.apply_effect(20, PARALYZE)
             target.visible_message("<span class='danger'>[target] [target.species.get_knockout_message(target)]</span>")
             playsound(user, 'sound/weapons/shovel_hit2.ogg', 50, 1)
+            var/obj/item/organ/external/head/O = target.organs_by_name[BP_HEAD]
+            if (O)
+                O.fracture() // Add the fracture action
     else
         return ..() // fallback to pistolwhippin'
   
