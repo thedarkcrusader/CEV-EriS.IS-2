@@ -158,6 +158,9 @@ Template:
 /obj/effect/landmark/start/ig
 	name = "Imperial Guardsman"
 
+/obj/effect/landmark/start/officer
+	name ="Security Officer"
+
 //Engineering//
 
 /obj/effect/landmark/start/engineer

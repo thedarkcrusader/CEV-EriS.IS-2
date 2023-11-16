@@ -2,6 +2,7 @@
 	name = "window"
 	desc = "A window."
 	icon = 'icons/obj/structures.dmi'
+	icon_state = "rwindow7"
 	density = 1
 	w_class = ITEM_SIZE_NORMAL
 

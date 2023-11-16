@@ -27,6 +27,7 @@
 	access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels)
 	minimal_access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels)
 	minimal_player_age = 7
+	latejoin_at_spawnpoints = TRUE
 	outfit_type = /decl/hierarchy/outfit/job/security/detective
 
 /datum/job/officer

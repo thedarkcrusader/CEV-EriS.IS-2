@@ -100,7 +100,7 @@ area/space/atmosalert()
 	name = "Centcom"
 	icon_state = "centcom"
 	requires_power = 0
-	dynamic_lighting = 1
+
 
 /area/centcom/holding
 	name = "Holding Facility"
@@ -258,3 +258,5 @@ area/space/atmosalert()
 					sound_to(H, S)
 
 	spawn(60) .()
+
+
