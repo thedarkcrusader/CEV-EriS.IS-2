@@ -1,5 +1,5 @@
 /datum/map/eris
-	name = "Warhammer"
+	name = "Cev Eris"
 	full_name = "CEV Eris"
 	path = "warhammer"
 	station_name  = "The CEV Eris"
@@ -7,16 +7,16 @@
 	dock_name     = "Eris"
 	boss_name     = "Captain"
 	boss_short    = "CS"
-	company_name  = "Royal exports"
-	company_short = "RE"
+	company_name  = "Ceverion Eris"
+	company_short = "CE"
 	system_name = "Null Subsector"
 
 	lobby_icon = 'maps/warhammer/fullscreen.dmi'
 	lobby_screens = list("lobby1","lobby2","lobby3","lobby4","lobby5", "lobby6")
 
-	station_levels = list(1,2,3,4)
-	contact_levels = list(1,2,3,4)
-	player_levels = list(1,2,3,4)
+	station_levels = list(1,2,3,4,5)
+	contact_levels = list(1,2,3,4,5)
+	player_levels = list(1,2,3,4,5)
 
 	allowed_spawns = list("Arrivals Shuttle")
 	base_turf_by_z = list("1" = /turf/simulated/floor/dirty, "2" = /turf/simulated/floor/dirty, "3" = /turf/simulated/floor/dirty,"4" = /turf/simulated/floor/dirty)
