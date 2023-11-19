@@ -5,7 +5,11 @@
 	#include "../shared/items/clothing.dm"
 	#include "../shared/items/cards_ids.dm"
 
-	#include "Cev_eris.dmm"
+	#include "eris_1.dmm"
+	#include "eris_2.dmm"
+	#include "eris_3.dmm"
+	#include "eris_4.dmm"
+	#include "eris_5.dmm"
 
 	#include "../../code/modules/lobby_music/generic_songs.dm"
 

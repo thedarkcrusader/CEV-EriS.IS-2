@@ -5,13 +5,13 @@
 
 
 /datum/job/ih
-	title = "IHDATUM" // IMPERIAL GUARDSMAN ROLE
+	title = "IHDATUM" // Ironhammer PMC's  Military jarheads this is there corpo sec wing so prettymuch suped up law enforcement On average they need to be stronger then most crew 
 	supervisors = "The Lieutenant  and your Sergeant."
 	total_positions = 0
 	spawn_positions = 0
 	social_class = SOCIAL_CLASS_MED //Guards are at least pretty respected in imperial society
 	outfit_type = /decl/hierarchy/outfit/job/ig //will need to be replaced eventually - wel
-	selection_color = "#33813A"
+	selection_color = "#4a3381"
 	department_flag = SEC
 	auto_rifle_skill = 3
 	semi_rifle_skill = 3
@@ -33,6 +33,16 @@
 			            access_all_personal_lockers, access_maint_tunnels, access_armory)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers, access_all_personal_lockers, access_maint_tunnels, access_armory
 
+		equip(var/mob/living/carbon/human/H)
+		var/current_name = H.real_name
+		..()
+		H.fully_replace_character_name("Operative [current_name]")
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
+		H.set_trait(new/datum/trait/death_tolerant())
+		H.set_trait(new/datum/trait/millitary_training())
+
+
+
 
 
 /datum/job/ih/Lieutenant
@@ -41,7 +51,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
-	selection_color = "#004e07"
+	selection_color = "#4a3381""
 	req_admin_notify = TRUE
 	social_class = SOCIAL_CLASS_HIGH
 	outfit_type = /decl/hierarchy/outfit/job/ironhammer/lt
@@ -63,6 +73,15 @@
 
 	announced = TRUE
 
+		equip(var/mob/living/carbon/human/H)
+		var/current_name = H.real_name
+		..()
+		H.fully_replace_character_name("Lieutenant [current_name]")
+		H.add_stats(17, 14, 15, 10))
+		H.set_trait(new/datum/trait/death_tolerant())
+		H.set_trait(new/datum/trait/millitary_training())
+
+
 
 /datum/job/ih/sergeant
 	title = "Gunnery Sergeant"
@@ -72,7 +91,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Ironhammer Lieutetnant"
-	selection_color = "#601c1c"
+	selection_color = "#4a3381"
 	economic_modifier = 5
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_morgue, access_external_airlocks)
 	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory, access_maint_tunnels, access_external_airlocks)
@@ -90,6 +109,15 @@
 	engineering_skill = 4
 	surgery_skill = 2
 
+
+		equip(var/mob/living/carbon/human/H)
+		var/current_name = H.real_name
+		..()
+		H.fully_replace_character_name("Sergeant [current_name]")
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
+		H.set_trait(new/datum/trait/death_tolerant())
+		H.set_trait(new/datum/trait/millitary_training())
+
 /datum/job/ih/inspector
 	title = "Ironhammer Inspector"
 	department = "Security"
@@ -98,13 +126,21 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Lieutetnant and Sergeant"
-	selection_color = "#601c1c"
+	selection_color = "#4a3381"
 //	alt_titles = list("Forensic Technician" = /decl/hierarchy/outfit/job/security/detective/forensic)
 	economic_modifier = 5
 	access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels)
 	minimal_access = list(access_security, access_sec_doors, access_forensics_lockers, access_morgue, access_maint_tunnels)
 	minimal_player_age = 7
 	outfit_type = /decl/hierarchy/outfit/job/ironhammer/inspector
+
+		equip(var/mob/living/carbon/human/H)
+		var/current_name = H.real_name
+		..()
+		H.fully_replace_character_name("Inspector [current_name]")
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
+		H.set_trait(new/datum/trait/death_tolerant())
+		H.set_trait(new/datum/trait/millitary_training())
 
 /datum/job/ih/operative
 	title = "Ironhammer Operative"
@@ -114,7 +150,7 @@
 	total_positions = 10
 	spawn_positions = 10
 	supervisors = "The Lieutetnant and Sergeant"
-	selection_color = "#601c1c"
+	selection_color = "#4a3381"
 	auto_rifle_skill = 6
 	semi_rifle_skill = 6
 	sniper_skill = 4
@@ -136,6 +172,15 @@
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers, access_all_personal_lockers, access_maint_tunnels,
 
 			            )
+
+		equip(var/mob/living/carbon/human/H)
+		var/current_name = H.real_name
+		..()
+		H.fully_replace_character_name("Operative [current_name]")
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
+		H.set_trait(new/datum/trait/death_tolerant())
+		H.set_trait(new/datum/trait/millitary_training())
+
 /decl/hierarchy/outfit/job/ironhammer
 	hierarchy_type = /decl/hierarchy/outfit/job/security
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -177,7 +222,7 @@
 
 //spawns/
 /obj/effect/landmark/start/ih/inspector
-	name = "Inspector
+	name = "Inspector"
 	"
 /obj/effect/landmark/start/ih/Lieutenant
 	name = "Lieutenant"
