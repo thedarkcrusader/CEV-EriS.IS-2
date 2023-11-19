@@ -46,7 +46,7 @@
 
 
 /datum/job/ih/Lieutenant
-	title = "Ironhammer Lieutenant "
+	title = "Ironhammer Lieutenant"
 	supervisors = "Your Lamia and your WIts
 	total_positions = 1
 	spawn_positions = 1
@@ -223,7 +223,7 @@
 //spawns/
 /obj/effect/landmark/start/ih/inspector
 	name = "Inspector"
-	"
+	
 /obj/effect/landmark/start/ih/Lieutenant
 	name = "Lieutenant"
 
@@ -232,3 +232,78 @@
 
 /obj/effect/landmark/start/ih/operative
 	name = "operative"
+
+////////////////
+//GUILD////// / 
+//////////////////
+
+/datum/job/guildies
+	title = "GUILDATUM"
+	department_flag = SUP
+	social_class = SOCIAL_CLASS_MED
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "The Guild Merchant, And Money"
+	selection_color = "#011c77"
+	access = list() 			//See get_access()
+	minimal_access = list() 	//See get_access()
+	economic_modifier = 5
+	announced = FALSE
+	latejoin_at_spawnpoints = TRUE
+	outfit_type = /decl/hierarchy/outfit/job/captain
+	melee_skill = 5
+	ranged_skill = 5
+	engineering_skill = 3
+	open_when_dead = TRUE
+	create_record = 1
+	announced = FALSE
+	can_be_in_squad = FALSE
+
+	equip(var/mob/living/carbon/human/H)
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12), rand(10,12))
+
+
+
+
+
+
+/datum/job/guildies/guild_tech
+	title = "Guild Technician"
+	department_flag = SUP
+	social_class = SOCIAL_CLASS_MED
+	total_positions = 5
+	spawn_positions = 5
+	supervisors = "The Guild Merchant"
+	selection_color = "#011c77"
+	access = list() 			//See get_access()
+	minimal_access = list() 	//See get_access()
+	economic_modifier = 5
+	outfit_type = /decl/hierarchy/outfit/job/captain
+
+	equip(var/mob/living/carbon/human/H)
+		H.add_stats(rand(12,17), rand(10,16), rand(8,12), rand(10,12))
+
+
+
+/datum/job/guildies/merchant
+	title = "Guild Merchant"
+	department_flag = COM|SUP
+	social_class = SOCIAL_CLASS_MAX
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "The Call Of Profit"
+	selection_color = "#011c77"
+	req_admin_notify = 1
+	access = list() 			//See get_access()
+	minimal_access = list() 	//See get_access()
+	economic_modifier = 20
+	announced = FALSE
+	outfit_type = /decl/hierarchy/outfit/job/captain
+	open_when_dead = FALSE
+	create_record = 1
+	announced = TRUE
+	can_be_in_squad = FALSE
+	latejoin_at_spawnpoints = TRUE
+
+	equip(var/mob/living/carbon/human/H)
+		H.add_stats(rand(5,7), rand(10,12), rand(4,6), rand(17,22))
