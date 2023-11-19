@@ -164,6 +164,10 @@
 		return damage
 	return FALSE
 
+/obj/item/projectile/proc/do_supression_aoe(var/location)
+	for(var/mob/living/carbon/human/h in orange(1,location))
+		h.supression_act(src)	
+
 //return TRUE if the projectile should be allowed to pass through after all, FALSE if not.
 /obj/item/projectile/proc/check_penetrate(atom/A)
 	return TRUE

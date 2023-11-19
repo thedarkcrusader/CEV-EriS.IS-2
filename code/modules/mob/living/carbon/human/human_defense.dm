@@ -328,6 +328,27 @@ meteor_act
 
 	return 1
 
+var/time_last_supressed = 0
+/mob/living/carbon/human/proc/supression_act(var/obj/item/projectile/P)
+    if(!client)
+        return
+    if(world.time > time_last_supressed + 1 SECONDS)
+        shake_camera(src,4,2)
+        overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 6)
+        //severe supression effects
+    else if(world.time > time_last_supressed + 5 SECONDS)
+        shake_camera(src,2,1)
+        overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
+        //medium supression effects
+    else if(world.time > time_last_supressed + 10 SECONDS)
+        overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 4)
+        //low supression effects
+    else if(time_last_supressed> 10)
+        if(prob(40))
+            visible_message(SPAN_DANGER("The [P.name] whizzes past [src]!"))
+            //playsound(loc, 'sound/effects/whiz-supersonic.wav', 60, 1, -1)
+    time_last_supressed = world.time
+
 /mob/living/carbon/human/proc/attack_bloody(obj/item/W, mob/living/attacker, var/effective_force, var/hit_zone)
 	if(W.damtype != BRUTE)
 		return
