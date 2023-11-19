@@ -60,33 +60,31 @@
 		return 0
 
 
+
 /datum/grab/normal/on_hit_grab(var/obj/item/grab/G)
 	var/obj/item/organ/external/O = G.get_targeted_organ()
 	var/mob/living/carbon/human/assailant = G.assailant
 	var/mob/living/carbon/human/affecting = G.affecting
-
-	if(!O)
+	if (!O)
 		to_chat(assailant, "<span class='warning'>[affecting] is missing that body part!</span>")
 		return 0
-
-	assailant.visible_message("<span class='danger'>[assailant] begins to [pick("bend", "twist")] [affecting]'s [O.name] into a jointlock!</span>")
+	assailant.visible_message("<span class='danger'>[assailant] begins to [pick("execute a precise joint lock on", "apply a devastating joint lock to")] [affecting]'s [O.name]!</span>")
 	G.attacking = 1
-
-	if(do_mob(assailant, affecting, action_cooldown - 1))
-
+	if (do_mob(assailant, affecting, action_cooldown - 1))
 		G.attacking = 0
 		G.action_used()
-		O.jointlock(assailant)
-		assailant.visible_message("<span class='danger'>[affecting]'s [O.name] is twisted!</span>")
+		if (assailant.has_trait("military_training")) // Check if the assailant has military training
+			O.jointlock(assailant, 2) // Apply joint lock with increased pain level
+			assailant.visible_message("<span class='danger'>[affecting]'s [O.name] is twisted in excruciating pain!</span>")
+		else
+			O.jointlock(assailant)
+			assailant.visible_message("<span class='danger'>[affecting]'s [O.name] is twisted!</span>")
 		playsound(assailant.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		return 1
-
 	else
-
-		affecting.visible_message("<span class='notice'>[assailant] fails to jointlock [affecting]'s [O.name].</span>")
+		affecting.visible_message("<span class='notice'>[assailant] fails to execute a joint lock on [affecting]'s [O.name].</span>")
 		G.attacking = 0
 		return 0
-
 
 /datum/grab/normal/on_hit_harm(var/obj/item/grab/G)
 	var/obj/item/organ/external/O = G.get_targeted_organ()

@@ -201,12 +201,25 @@
 	return TRUE
 
 /obj/item/gun/attack(atom/A, mob/living/user, def_zone)
-	if (A == user && user.zone_sel.selecting == BP_MOUTH && !mouthshoot)
-		handle_suicide(user)
-	else if(user.a_intent == I_HURT && can_shoot()) //point blank shooting
-		Fire(A, user, pointblank=1)
-	else
-		return ..() //Pistolwhippin'
+    if (ishuman(A) && A != user && user.zone_sel.selecting == BP_MOUTH && !mouthshoot)
+        handle_suicide(user)
+    else if (user.a_intent == I_HURT && can_shoot()) //point blank shooting
+        Fire(A, user, pointblank=1)
+    else if (ishuman(A) && user.zone_sel.selecting == BP_HEAD) // buttstrikes to the head
+        if (user.has_trait(/datum/trait/millitary_training)) // check for "millitary_training" trait
+            var/mob/living/carbon/human/target = A
+            user.visible_message(SPAN_DANGER("You strike [target] with the butt of your rifle."))
+            to_chat(target , SPAN_DANGER("You see the butt of [src] flying at you and black out."))
+            target.apply_effect(20, PARALYZE)
+            target.visible_message("<span class='danger'>[target] [target.species.get_knockout_message(target)]</span>")
+            playsound(user, 'sound/weapons/shovel_hit2.ogg', 50, 1)
+            var/obj/item/organ/external/head/O = target.organs_by_name[BP_HEAD]
+            if (O)
+                O.fracture() // Add the fracture action
+    else
+        return ..() // fallback to pistolwhippin'
+  
+
 
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)
 	if(!user || !target) return

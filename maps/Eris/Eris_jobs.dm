@@ -1,7 +1,7 @@
-/datum/map/warhammer
+/datum/map/eris
 	allowed_jobs = list(
 	/datum/job/captain,
-	/datum/job/envoy,
+	/datum/job/officer,
 	/datum/job/acolyte,
 	/datum/job/inquisitor,
 	/datum/job/ig/commissar,

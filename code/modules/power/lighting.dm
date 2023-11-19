@@ -146,7 +146,7 @@
 	active_power_usage = 0 //temporary or maybe not so we can get power
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 
-	var/on = 0					// 1 if on, 0 if off
+	var/on = 1					// 1 if on, 0 if off
 	var/flickering = 0
 	var/light_type = /obj/item/light/tube		// the type of light item
 	var/construct_type = /obj/machinery/light_construct
