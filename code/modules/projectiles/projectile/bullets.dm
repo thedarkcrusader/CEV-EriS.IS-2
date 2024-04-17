@@ -187,7 +187,7 @@
 	armor_penetration = 15
 
 /obj/item/projectile/bullet/pistol/medium/revolver
-	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	fire_sound = 'sound/weapons/gunshot/sniper.ogg'
 	damage = 39 //.44 magnum or something
 	armor_penetration = 10
 
@@ -319,7 +319,7 @@
  /obj/item/projectile/bullet/bolt/on_hit(var/atom/target, var/blocked = 0) // This shit is broken.
 	if(isturf(target))
 		explosion(target, -1, 0, 2)
-	..() 
+	..()
 */
 
 /* Practice */

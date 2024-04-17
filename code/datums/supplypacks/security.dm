@@ -33,7 +33,7 @@
 	contains = list(/obj/item/clothing/under/tactical,
 					/obj/item/clothing/suit/armor/vest/opvest,
 					/obj/item/clothing/head/helmet/tactical,
-					/obj/item/clothing/mask/balaclava/tactical,
+		//			/obj/item/clothing/mask/balaclava/tactical,
 					/obj/item/clothing/glasses/tacgoggles,
 					/obj/item/storage/belt/security/tactical,
 					/obj/item/clothing/shoes/tactical,

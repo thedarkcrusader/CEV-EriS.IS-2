@@ -5,6 +5,4 @@
 # Ranks can be anything defined in admin_ranks.txt           ~Carn   #
 ######################################################################
 
-theblckflag- Host
-f1- SeniorAdmin
-fee- SeniorAdmin
+theblackflag- Host

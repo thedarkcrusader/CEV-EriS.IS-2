@@ -639,4 +639,149 @@
 
 
 
+// Eris shit begins here//
+/obj/item/ammo_casing/auto35
+    desc = ".35 Auto Bullet Casing"
+    caliber = ".35"
+    projectile_type = /obj/item/projectile/bullet/pistol/auto35
+    icon_state = "r-casing"  // Replace with the appropriate icon state
+    ammo_stack = /obj/item/ammo_magazine/auto35
+
+/obj/item/projectile/bullet/pistol/auto35
+    fire_sound = 'sound/weapons/guns/fire/pistol1.ogg' // Replace with the appropriate fire sound
+    penetrating = FALSE
+    damage = 30
+
+/obj/item/ammo_magazine/auto35
+    name = ".35 Auto Magazine"
+    desc = "A magazine for .35 Auto pistols."
+    icon_state = "colt-mag_7"  // Replace with the appropriate magazine icon state
+    caliber = ".35"
+    ammo_type = /obj/item/ammo_casing/auto35
+    matter = list(DEFAULT_WALL_MATERIAL = 1260)
+    max_ammo = 10
+    mag_type = MAGAZINE
+
+
+
+/obj/item/ammo_magazine/heavymag
+    name = ".40 magnum magazine "
+    desc = "A magazine for .40 magnum  pistols."
+    icon_state = "colt-mag_7"  // Replace with the appropriate magazine icon state
+    caliber = ".40"
+    ammo_type = /obj/item/ammo_casing/heavymag
+    matter = list(DEFAULT_WALL_MATERIAL = 1260)
+    max_ammo = 10
+    mag_type = MAGAZINE
+
+/obj/item/ammo_casing/heavymag
+    desc = ".40 magnum Bullet Casing"
+    caliber = ".40"
+    projectile_type = /obj/item/projectile/bullet/pistol/strong
+    icon_state = "r-casing"
+    ammo_stack = /obj/item/ammo_magazine/heavymag
+
+
+//paco//
+/obj/item/gun/projectile/pistol/paco
+	name = "FS HG .35 Auto \"Paco\""
+	desc = "A modern and reliable sidearm for the soldier in the field. Commonly issued as a sidearm to Ironhammer Operatives. Uses standard .35 and high capacity magazines."
+	icon_state = "paco"
+	icon = 'icons/paco.dmi'
+	caliber = ".35"
+	w_class = ITEM_SIZE_NORMAL
+	magazine_type = /obj/item/ammo_magazine/auto35
+	allowed_magazines = /obj/item/ammo_magazine/auto35
+
+
+/obj/item/gun/projectile/pistol/paco/update_icon()
+    ..()
+    icon_state = "paco"
+    if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
+        icon_state = "paco_slide"
+
+//Giskard/
+/obj/item/gun/projectile/pistol/giskard
+	name = "FS HG .35 Auto \"Giskard\""
+	desc = "A popular  Frozen Star brand pocket pistol chambered for the ubiquitous .35 auto round. Uses standard capacity magazines."
+	icon_state = "giskard"
+	item_state = "giskard"
+	icon = 'icons/giskard.dmi'
+	caliber = ".35"
+	magazine_type = /obj/item/ammo_magazine/auto35
+	allowed_magazines = /obj/item/ammo_magazine/auto35
+
+
+/obj/item/gun/projectile/pistol/giskard/update_icon()
+    ..()
+    icon_state = "giskard"
+    if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
+        icon_state = "giskard_slide"
+
+//Olivaw/
+/obj/item/gun/projectile/pistol/olivaw
+	name = "FS HG .35 Auto \"Olivaw\""
+	desc = "A popular  Frozen Star machine pistol. This one has a two-round burst-fire mode and is chambered for .35 auto. It can use normal and high capacity magazines.s. the hood rats got to this one it gots a switch on it"
+	icon_state = "olivawcivil"
+	icon = 'icons/olivawcivil.dmi'
+	caliber = ".35"
+	w_class = ITEM_SIZE_NORMAL
+	magazine_type = /obj/item/ammo_magazine/auto35
+	allowed_magazines = /obj/item/ammo_magazine/auto35
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, one_hand_penalty=0, burst_accuracy=null, dispersion=null, automatic = 0),
+		list(mode_name="3-round bursts", burst=2, fire_delay=null, move_delay=4,    one_hand_penalty=1, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1.0), automatic = 0),
+		list(mode_name="automatic",   	 burst=1, fire_delay=0,  move_delay=0, one_hand_penalty=2, burst_accuracy=list(0,-1,-1), dispersion=list(0.0, 0.6, 1), automatic = 2)
+		//list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=2, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
+		)
+
+
+/obj/item/gun/projectile/pistol/olivaw/update_icon()
+    ..()
+    icon_state = "olivawcivil"
+    if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
+        icon_state = "olivawcivil_empty"
+
+
+/obj/item/gun/projectile/pistol/colt
+	name = "FS HG .35 Auto \"colt\""
+	desc = "A cheap knock-off of a Colt M1911. Uses standard .35 and high capacity magazines."
+	icon_state = "colt"
+	icon = 'icons/colt.dmi'
+	caliber = ".35"
+	armor_penetration = 14
+	w_class = ITEM_SIZE_NORMAL
+	magazine_type = /obj/item/ammo_magazine/auto35
+	allowed_magazines = /obj/item/ammo_magazine/auto35
+
+
+
+/obj/item/gun/projectile/pistol/colt/update_icon()
+    ..()
+    icon_state = "colt"
+    if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
+        icon_state = "colt_slide"
+
+
+
+/obj/item/gun/projectile/pistol/avasarala
+	name = "FS HG .40 Magnum \"avasarala\""
+	desc = "An obvious replica of an old Earth Desert Eagle. Robust and straight, this is a gun for a leader, not just an officer."
+	icon_state = "avasarala"
+	icon = 'icons/avasarala.dmi'
+	caliber = ".40"
+	armor_penetration = 14
+	w_class = ITEM_SIZE_NORMAL
+	magazine_type = /obj/item/ammo_magazine/heavymag
+	allowed_magazines = /obj/item/ammo_magazine/heavymag
+
+
+
+/obj/item/gun/projectile/pistol/avasarala/update_icon()
+    ..()
+    icon_state = "avasarala"
+    if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
+        icon_state = "avasarala_slide"
+
+
 

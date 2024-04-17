@@ -153,6 +153,29 @@
 		return
 	..()
 
+
+
+/obj/item/gun/projectile/automatic/pepperspray
+	name = "Pepperspray Canister"
+	desc = "A state-of-the-art canister deployer designed for efficient dispersal of potent pepper spray. Ideal for self-defense and crowd control situations"
+	icon = 'icons/obj/weapons/melee/misc.dmi'
+	icon_state = "pepperspray"
+	item_state = "pepperspray"
+	caliber = "spraycan"
+	one_hand_penalty = 0
+	w_class = ITEM_SIZE_SMALL
+	fire_sound = 'sound/effects/spray.ogg'
+	casingsound = null//No eject sound for you.
+	firemodes = list()
+	automatic = 1
+	fire_delay = 1
+	burst=1
+	magazine_type = /obj/item/ammo_magazine/pepperspray
+	allowed_magazines = /obj/item/ammo_magazine/pepperspray
+	can_jam = FALSE
+
+
+
 /obj/item/reagent_containers/spray/waterflower
 	name = "water flower"
 	desc = "A seemingly innocent sunflower...with a twist."

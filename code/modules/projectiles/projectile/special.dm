@@ -282,3 +282,88 @@
 	//This has been made a simple loop, for the most part flamer_fire_act() just does return, but for specific items it'll cause other effects.
 	firelevel -= 2 //reduce the intensity by 2 per tick
 	return
+
+
+
+
+
+/obj/item/projectile/pepperspray
+	name = "Spray Mist"
+	icon_state = "pepperspray"
+	damage = 10
+	range =  5//Very short range.
+	damage_type = PAIN
+	mob_hit_sound = list('sound/effects/spray.ogg')
+	speed = 0.8
+
+/obj/pepper_spray_cloud
+	name = "pepper spray cloud"
+	desc = "A cloud of pepper spray that causes irritation and discomfort."
+	anchored = 1
+	mouse_opacity = 0
+	icon = 'icons/effects/chemsmoke.dmi'
+	layer = BELOW_OBJ_LAYER
+	var/spray_level = 12
+	var/irritation_level = 10
+	var/cloud_color = "red"
+
+/obj/pepper_spray_cloud/New(loc, spray_lvl, irritation_lvl, cloud_color)
+	..()
+	if (istype(loc, /turf/simulated/floor/exoplanet/water/shallow))
+		qdel(src)
+	playsound(src, "sound/effects/spray.ogg", 50, FALSE)
+	if (cloud_color)
+		cloud_color = cloud_color
+	icon_state = "[cloud_color]"
+	if (spray_lvl) spray_level = spray_lvl
+	if (irritation_lvl) irritation_level = irritation_lvl
+	START_PROCESSING(SSobj, src)
+
+/obj/pepper_spray_cloud/Destroy()
+	set_light(0)
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/pepper_spray_cloud/Crossed(mob/living/M)
+	if (istype(M))
+		if (ishuman(M))
+			M.apply_effect(30, BLIND, 0)
+			M.apply_effect(20, PAIN, 0)
+			M.apply_effect(10, WEAKEN, 0)
+			M.apply_effect(20, STUTTER, 0)
+
+/obj/pepper_spray_cloud/proc/updateicon()
+	if (irritation_level < 15)
+		color = "#c1c1c1"
+	switch (spray_level)
+		if (1 to 9)
+			icon_state = "[cloud_color]_1"
+			set_light(2)
+		if (10 to 25)
+			icon_state = "[cloud_color]_2"
+			set_light(4)
+		if (25 to INFINITY)
+			icon_state = "[cloud_color]_3"
+			set_light(6)
+
+/obj/pepper_spray_cloud/Process()
+	var/turf/T = loc
+	spray_level = max(0, spray_level)
+	if (!istype(T))
+		qdel(src)
+		return
+	updateicon()
+	if (!spray_level)
+		qdel(src)
+		return
+	var/j = 0
+	for (var/i in loc)
+		if (++j >= 11) break
+		if (isliving(i))
+			var/mob/living/I = i
+			if (istype(I, /mob/living/carbon/human))
+				I.apply_effect(4, STUN, 0)
+				I.apply_effect(4, BLIND, 0)
+				I.apply_effect(4, PAIN, 0)
+	spray_level -= 2
+	return

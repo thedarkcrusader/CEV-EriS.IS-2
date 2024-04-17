@@ -317,3 +317,18 @@
 /obj/item/ammo_magazine/flamer/attack_self(mob/user) //Don't empty ur ammo
 	return
 
+
+/obj/item/ammo_magazine/pepperspray
+	name = "Pepperspray Capsule"
+	desc = "Put it in your Pepperspray dispensor  and spray those you don't want to date."
+	icon_state = "flamer"
+	caliber = "spraycan"
+	mag_type = MAGAZINE
+	ammo_type = /obj/item/ammo_casing/spraycan
+	max_ammo = 50
+	multiple_sprites = FALSE
+
+/obj/item/ammo_magazine/flamer/attack_self(mob/user) //Don't empty ur ammo
+	return
+
+

@@ -66,7 +66,7 @@
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again
 	var/burst_delay = 2	//delay between shots, if firing in bursts
 	var/automatic = 0  //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
-	var/move_delay = 1
+	var/move_delay = 0
 	var/fire_sound = null//'sound/weapons/gunshot/gunshot.ogg' //No fire sound by default so we use the bullet's fire sound.
 	var/fire_sound_text = "gunshot"
 	var/far_fire_sound = null
@@ -218,7 +218,7 @@
                 O.fracture() // Add the fracture action
     else
         return ..() // fallback to pistolwhippin'
-  
+
 
 
 /obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0)

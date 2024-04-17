@@ -231,3 +231,10 @@
 	caliber = "flamer"
 	projectile_type = /obj/item/projectile/flamer
 
+/obj/item/ammo_casing/spraycan
+	name = "Pepper mist"
+	desc = "Gas ammo isn't deleting properly for some reason. Please don't bug Matt about this he knows."
+	icon_state = "null"
+	spent_icon = "null"
+	caliber = "spraycan"
+	projectile_type = /obj/item/projectile/pepperspray

@@ -1,7 +1,7 @@
 /datum/map/eris
 	allowed_jobs = list(
 	/datum/job/captain,
-	/datum/job/officer,
+	/datum/job/ih/operative,
 	/datum/job/acolyte,
 	/datum/job/inquisitor,
 	/datum/job/ig/commissar,

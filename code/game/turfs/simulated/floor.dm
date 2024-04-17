@@ -90,3 +90,13 @@
 			if(ishuman(M))
 				return
 		new /obj/flamer_fire(src, 12, 10, "red", 1)
+
+
+
+/turf/simulated/floor/Crossed(var/atom/A)
+	..()
+	if(istype(A, /obj/item/projectile/pepperspray))
+		for(var/mob/M in src)
+			if(ishuman(M))
+				return
+		new /obj/pepper_spray_cloud(src, 12, 10, "red", 1)

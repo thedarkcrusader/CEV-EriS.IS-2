@@ -183,9 +183,9 @@
 
 					//Tackling?
 					if(BP_CHEST)
-						return H.make_grab(H, src, GRAB_TAKEDOWN)
+						return H.make_grab(H, src,GRAB_NORMAL)
 					if(BP_GROIN)
-						return H.make_grab(H, src, GRAB_TAKEDOWN)
+						return H.make_grab(H, src, GRAB_NORMAL)
 
 
 

@@ -671,7 +671,7 @@ obj/random/obstruction/spawn_choices()
 				/obj/item/clothing/mask/breath = 6,
 				/obj/item/clothing/mask/breath/medical = 4,
 				/obj/item/clothing/mask/balaclava = 3,
-				/obj/item/clothing/mask/balaclava/tactical = 2,
+				///obj/item/clothing/mask/balaclava/tactical = 2,
 				/obj/item/clothing/mask/surgical = 4)
 
 /obj/random/snack

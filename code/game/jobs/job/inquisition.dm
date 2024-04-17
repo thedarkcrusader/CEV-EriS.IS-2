@@ -92,6 +92,7 @@
 		H.set_trait(new/datum/trait/death_tolerant())
 		H.warfare_faction = IMPERIUM
 		H.witchblood()
+		H.set_trait(new/datum/trait/millitary_training())
 		to_chat(H, "<span class='notice'><b><font size=3>You are a Throne Agent, Loyal servant of the Imperium. As full-fledged Inquisitor. Your task is to seek and destroy enemies of the Imperium, whether they're daemons, Chaos, Xenos or Heretics. The Emperor Protects.</font></b></span>")
 /datum/job/inquisitor/equip(var/mob/living/carbon/human/H)
 	. = ..()

@@ -46,13 +46,13 @@
 
 /obj/item/grab/attack_self(mob/user)
 	current_grab.attack_self_act(src)
-	/*
+
 	switch(assailant.a_intent)
 		if(I_HELP)
 			downgrade()
 		else
 			upgrade()
-	*/
+
 
 /obj/item/grab/attack(mob/M, mob/living/user)
 	current_grab.hit_with_grab(src)

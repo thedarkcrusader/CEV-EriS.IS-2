@@ -10,6 +10,8 @@
 	#include "eris_3.dmm"
 	#include "eris_4.dmm"
 	#include "eris_5.dmm"
+	#include "eris_jubstufff.dm"
+
 
 	#include "../../code/modules/lobby_music/generic_songs.dm"
 
